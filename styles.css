@@ -1,7 +1,12 @@
-.hero {
-    background: #ffffff;
-    padding: 60px 0px;
-    font-family: sans-serif;
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+  }
+  
+  /* Hero */
+  .hero {
+    padding: 60px 20px;
   }
   
   .hero-content {
@@ -15,6 +20,15 @@
   
   .left {
     max-width: 540px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+  }
+  
+  .right {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
   }
   
   .left h1 {
@@ -36,6 +50,11 @@
   .features li {
     margin-bottom: 8px;
     font-size: 18px;
+    transition: transform 0.2s ease;
+  }
+  
+  .features li:hover {
+    transform: translateX(5px);
   }
   
   .price {
@@ -61,13 +80,15 @@
     background-color: #e0e0e0;
     padding: 30px;
     border-radius: 30px;
+    position: sticky;
+    top: 100px;
   }
   
   .right img {
     width: 300px;
     height: auto;
   }
-
+  
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -79,39 +100,9 @@
     }
   }
   
-  .hero .left,
-  .hero .right {
-    animation: fadeInUp 1s ease forwards;
-    opacity: 0;
-  }
-  
-  .hero .left {
-    animation-delay: 0.2s;
-  }
-  
-  .hero .right {
-    animation-delay: 0.4s;
-  }
-
-  .features li {
-    transition: transform 0.2s ease;
-  }
-  
-  .features li:hover {
-    transform: translateX(5px);
-  }
-
-  .right .fridge-box {
-    position: sticky;
-    top: 100px;
-    background-color: #e0e0e0;
-    padding: 30px;
-    border-radius: 30px;
-  }
-  
+  /* Navbar główny */
   .navbar {
     display: flex;
-    font-family: "Roboto";
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
@@ -122,12 +113,14 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
   
-  .nav-left, .nav-right {
+  .nav-left,
+  .nav-right {
     display: flex;
     gap: 70px;
   }
   
-  .nav-left a, .nav-right a {
+  .nav-left a,
+  .nav-right a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
@@ -174,11 +167,135 @@
     margin: 2px auto 0;
   }
   
-.roboto-uniquifier {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+  /* Nawigacja przy scrollu */
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .hidden-navbar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .visible-navbar {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  #navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  #navbar a:hover {
+    color: #0077cc;
+  }
+  
+  .funkcje {
+    padding: 80px 20px;
+    background: #ffffff;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .funkcje h2 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .funkcje-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .funkcje-column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    flex: 1;
+    min-width: 60px;
+  }
+  
+  .funkcja {
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .funkcje-image img {
+    width: 800px;
+    height: auto;
+    border-radius: 0px;
+  }
+
+  .zarzadzanie-zywnoscia h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
+
+  .text-zywnosc {
+    font-size: 20px;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .expand-toggle {
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+  }
+  .section {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-content {
+    display: none;
+    padding: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  .active .arrow {
+    transform: rotate(180deg);
+  }
+  .active + .section-content {
+    display: block;
   }
