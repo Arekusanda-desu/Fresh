@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opinie | FreshSynk AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">FreshSynk AI</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-gray-300">Strona główna</a></li>
+      <li><a href="technologie.html" class="hover:text-gray-300">Technologie</a></li>
+      <li><a href="funkcje.html" class="hover:text-gray-300">Funkcje</a></li>
+      <li><a href="opinie.html" class="hover:text-gray-300 font-semibold">Opinie</a></li>
+      <li>
+        <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
+          🛒 Koszyk
+          <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sekcja Opinie -->
+  <section class="max-w-6xl mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold mb-10 text-center">Opinie użytkowników</h1>
+
+    <div class="flex space-x-6 overflow-x-auto pb-4">
+      <div class="min-w-[300px] bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Elżbieta" class="w-20 h-20 rounded-full mb-4">
+        <h2 class="text-xl font-semibold mb-2">Elżbieta, 62 lata</h2>
+        <p>„Dzięki tej lodówce nie zapominam o terminach! Idealna dla osoby z cukrzycą – pomaga pilnować diety i oszczędza czas.”</p>
+      </div>
+
+      <div class="min-w-[300px] bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Marcin" class="w-20 h-20 rounded-full mb-4">
+        <h2 class="text-xl font-semibold mb-2">Marcin, 35 lat</h2>
+        <p>„Google Assistant, szybkie przepisy, automatyczna lista zakupów – to wszystko działa genialnie!”</p>
+      </div>
+
+      <div class="min-w-[300px] bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Anna" class="w-20 h-20 rounded-full mb-4">
+        <h2 class="text-xl font-semibold mb-2">Anna, 42 lata</h2>
+        <p>„Jestem weganką i ta lodówka świetnie dopasowuje przepisy do mojej diety. Kocham to!”</p>
+      </div>
+
+      <div class="min-w-[300px] bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
+        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Katarzyna" class="w-20 h-20 rounded-full mb-4">
+        <h2 class="text-xl font-semibold mb-2">Katarzyna, 29 lat</h2>
+        <p>„Planowanie posiłków z dwójką dzieci? Teraz to przyjemność – zero stresu, zero zmarnowanego jedzenia.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: Koszyk -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
+      <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
+      <div id="cartContent" class="space-y-4"></div>
+      <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
+    </div>
+  </div>
+
+</body>
+</html>
