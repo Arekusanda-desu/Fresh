@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koszyk | FreshSynk AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">FreshSynk AI</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-gray-300">Strona główna</a></li>
+      <li><a href="technologie.html" class="hover:text-gray-300">Technologie</a></li>
+      <li><a href="funkcje.html" class="hover:text-gray-300">Funkcje</a></li>
+      <li><a href="opinie.html" class="hover:text-gray-300">Opinie</a></li>
+      <li>
+        <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
+          🛒 Koszyk
+          <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Koszyk -->
+  <section class="max-w-4xl mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold mb-10 text-center">Twój koszyk</h1>
+
+    <div id="cart-items" class="space-y-6">
+      <!-- Produkty zostaną wczytane tutaj przez JS -->
+    </div>
+
+    <div class="mt-10 text-center">
+      <button onclick="clearCart()" class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">Wyczyść koszyk</button>
+    </div>
+  </section>
+
+  <!-- MODAL (opcjonalny, если хочешь использовать и тут) -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
+      <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
+      <div id="cartContent" class="space-y-4"></div>
+      <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
+    </div>
+  </div>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cart-items');
+      container.innerHTML = '';
+
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="text-center text-gray-500">Koszyk jest pusty.</p>';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'bg-white p-6 rounded-xl shadow-md flex justify-between items-center';
+        div.innerHTML = `
+          <div>
+            <h2 class="text-xl font-semibold">${item.name}</h2>
+            <p class="text-gray-600">Cena: ${item.price}</p>
+          </div>
+          <button onclick="removeFromCart(${index})" class="bg-red-400 hover:bg-red-600 text-white px-4 py-2 rounded">Usuń</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      loadCart();
+    }
+
+    window.onload = loadCart;
+  </script>
+
+</body>
+</html>
