@@ -455,3 +455,17 @@ body {
   width: 30px;
   text-align: right;
 }
+
+#cartModal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #cartModal.hidden {
+    display: none;
+  }
