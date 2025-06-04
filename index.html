@@ -13,8 +13,8 @@
   <header class="navbar">
     <div class="nav-left">
       <a href="#">Strona główna</a>
-      <a href="#">Technologie</a>
-      <a href="#">Funkcje</a>
+      <a href="technologie.html">Technologie</a>
+      <a href="funkcje.html">Funkcje</a>
     </div>
 
     <div class="logo-container">
@@ -33,9 +33,16 @@
     </div>
 
     <div class="nav-right">
-      <a href="#">Galeria</a>
-      <a href="#">Opinie</a>
-      <a href="#">Kontakt</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="opinie.html">Opinie</a>
+      <a href="kontakt.html">Kontakt</a>
+      <li>
+        <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
+          🛒 Koszyk
+          <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
+        </button>
+      </li>
+      
     </div>
   </header>
 
@@ -57,7 +64,20 @@
           <strong>Od 533,30 zł / mies. w ratach 0%,<br />
             przez 30 miesięcy lub 15 999,00 zł</strong>
         </p>
-        <button class="buy-btn">Dodaj do koszyka</button>
+        <button onclick="addToCart('FreshSynk AI SmartCool 8500', '3999 zł')" 
+  class="buy-btn">
+  🛒 Dodaj do koszyka
+</button>
+
+<script>
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`Dodano do koszyka: ${name}`);
+  }
+</script>
+
       </div>
       <div class="right">
         <div class="fridge-box">
@@ -103,7 +123,7 @@ pomagamy minimalizowac marnowanie zywnosci.</p>
 Na podstawie dostepnych sktadników w lodówce, nasza
 aplikacja sugeruje przepisy, które odpowiadaja
 preferenciom uzytkownika, takie jak dieta
-wegetarianska, keto czy niskokaloryczna. UZytkownicy
+wegetarianska, keto czy niskokaloryczna. Użytkownicy
 moga takze sledzic wartosci odzywcze przygotowanych
 potraw. </p>
 <p>3. Integracja z systemem smart home
@@ -129,93 +149,94 @@ tatwo zamówié brakujace sktadniki.
           
           <div class="section">Podsumowanie <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Typ chłodzenia: Triple Cooling</p>
-            <p>Wysokość obudowy z zawiasem netto:1830 mm</p>
-            <p>Głębokość z uchwytem drzwi netto: 723 mm</p>
-            <p>Waga netto: 155 kg</p>
-            <p>Szerokość netto: 912 mm</p>
+            <p><b>Typ chłodzenia:</b> Triple Cooling</p>
+            <p><b>Wysokość obudowy z zawiasem netto:</b>1830 mm</p>
+            <p><b>Wysokość obudowy z zawiasem netto:</b>1830 mm</p>
+            <p><b>Głębokość z uchwytem drzwi netto:</b> 723 mm</p>
+            <p><b>Waga netto:</b> 155 kg</p>
+            <p><b>Szerokość netto:</b> 912 mm</p>
          </div>
           
           <div class="section">Lewa strona zamrażalnika <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Liczba półek: 2</p>
-            <p>Liczba szuflad: 1 </p>
-            <p>Liczba pojemników w drzwiach: 3</p> 
-            <p>Kostkarka: Dual Auto Ice Maker</p>
-            <p>Oświetlenie wewnętrzne LED: Tak</p>
+            <p><b>Liczba półek:</b> 2</p>
+            <p><b>Liczba szuflad:</b> 1 </p>
+            <p><b>Liczba pojemników w drzwiach:</b> 3</p> 
+            <p><b>Kostkarka:</b> Dual Auto Ice Maker</p>
+            <p><b>Oświetlenie wewnętrzne LED:</b> Tak</p>
           </div>
           
           <div class="section">Prawa strona zamrażalnika <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Liczba szuflad: 1</p>
-            <p>FlexZone: Tak</p>
-            <p>Liczba półek: 2</p> 
-            <p>Liczba pojemników w drzwiach: 3</p> 
+            <p><b>Liczba szuflad:</b> 1</p>
+            <p><b>FlexZone:</b> Tak</p>
+            <p><b>Liczba półek:</b> 2</p> 
+            <p><b>Liczba pojemników w drzwiach:</b> 3</p> 
           </div>
           
           <div class="section">Wydajność <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Zamrażarka brutto: 250 ℓ</p>
-            <p>Chłodziarka brutto: 386 ℓ</p>
-            <p>Pojemność brutto: 636 ℓ</p>
+            <p><b>Zamrażarka brutto:</b> 250 ℓ</p>
+            <p><b>Chłodziarka brutto:</b> 386 ℓ</p>
+            <p><b>Pojemność brutto:</b> 636 ℓ</p>
           </div>
           
           <div class="section">Funkcja chłodzenia <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Typ chłodzenia: Triple Cooling</p>
+            <p><b>Typ chłodzenia:</b> Triple Cooling</p>
           </div>
           
           <div class="section">Cechy zewnętrzne <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Beverage Center: Tak</p>
-            <p> Kolor: Grafitowa stal</p>
-            <p>Dozownik z filtrem wody: Tak</p>
-            <p>Wyświetlacz: Family Hub</p>
-            <p>Otwieranie drzwi: Podchwyt</p>
-            <p>Typ dozownika: Dyspenser wody (z podłączeniem do wody)+ Auto Fill</p>
+            <p><b>Beverage Center:</b> Tak</p>
+            <p><b> Kolor:</b> Grafitowa stal</p>
+            <p><b>Dozownik z filtrem wody:</b> Tak</p>
+            <p><b>Wyświetlacz:</b> Family Hub</p>
+            <p><b>Otwieranie drzwi:</b> Podchwyt</p>
+            <p><b>Typ dozownika:</b> Dyspenser wody (z podłączeniem do wody)+ Auto Fill</p>
           </div>
           
           <div class="section">Funkcje ogólne <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Alarm otwartych drzwi: Tak</p>
-            <p>Metal Cooling: Tak</p>
+            <p><b>Alarm otwartych drzwi:</b> Tak</p>
+            <p><b>Metal Cooling:</b> Tak</p>
           </div>
          
           <div class="section">Wydajność <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Klasa klimatyczna: SN, N, ST, T</p>
-            <p>Zdolność zamrażania:  12 kg/24 godz.</p>
-            <p>Roczne zużycie energii: 365 kWh/rok</p>
-            <p>Klasa efektywności energetycznej: E</p>
-            <p>Poziom hałasu (dB): 37 dBA</p>
+            <p><b>Klasa klimatyczna:</b> SN, N, ST, T</p>
+            <p><b>Zdolność zamrażania:</b>  12 kg/24 godz.</p>
+            <p><b>Roczne zużycie energii:</b> 365 kWh/rok</p>
+            <p><b>Klasa efektywności energetycznej:</b> E</p>
+            <p><b>Poziom hałasu (dB):</b> 37 dBA</p>
           </div>
 
           <div class="section">Parametry fizyczne <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Wysokość obudowy z zawiasem netto: 1830 mm</p>
-            <p>Wysokość obudowy bez zawiasu netto: 1797 mm</p>
-            <p>Głębokość z uchwytem drzwi netto: 723 mm</p>
-            <p>Głębokość bez uchwytu drzwi netto: 723 mm</p>
-            <p>Głębokość bez drzwi netto: 610 mm</p>
-            <p>Waga netto: 155 kg</p>
-            <p>Szerokość netto: 912 mm</p>
-            <p>Wymiary opakowania (SxWxG): 972 x1970x776 mm</p>
-            <p>Waga z opakowaniem: 164 kg</p>
+            <p><b>Wysokość obudowy z zawiasem netto:</b> 1830 mm</p>
+            <p><b>Wysokość obudowy bez zawiasu netto:</b> 1797 mm</p>
+            <p><b>Głębokość z uchwytem drzwi netto:</b> 723 mm</p>
+            <p><b>Głębokość bez uchwytu drzwi netto:</b> 723 mm</p>
+            <p><b>Głębokość bez drzwi netto:</b> 610 mm</p>
+            <p><b>Waga netto:</b> 155 kg</p>
+            <p><b>Szerokość netto:</b> 912 mm</p>
+            <p><b>Wymiary opakowania (SxWxG):</b> 972 x1970x776 mm</p>
+            <p><b>Waga z opakowaniem:</b> 164 kg</p>
           </div>
 
           <div class="section">Funkcje chłodziarki <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Oświetlenie wewnętrzne LED: Górne LED</p>
-            <p>Liczba pojemników w drzwiach:  6</p>
-            <p>Liczba półek: 4</p>
-            <p>Liczba szuflad: 2</p>
-            <p>Pochłaniacz zapachów: Filtr dezodoryzujący</p>
-            <p>Liczba półek na duże butelki w drzwiach: 1</p>
+            <p><b>Oświetlenie wewnętrzne LED:</b> Górne LED</p>
+            <p><b>Liczba pojemników w drzwiach:</b>  6</p>
+            <p><b>Liczba półek:</b> 4</p>
+            <p><b>Liczba szuflad:</b> 2</p>
+            <p><b>Pochłaniacz zapachów:</b> Filtr dezodoryzujący</p>
+            <p><b>Liczba półek na duże butelki w drzwiach:</b> 1</p>
           </div>
 
           <div class="section">Łączność z aplikacjami <span class="arrow">▼</span></div>
           <div class="section-content">
-            <p>Kompatybilność z aplikacją SmartThings: Tak</p>
+            <p><b>Kompatybilność z aplikacją SmartThings:</b> Tak</p>
           </div>
       </section>
 
@@ -286,6 +307,16 @@ tatwo zamówié brakujace sktadniki.
     <!-- Pomoc sekcja -->
   </section>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
+  <!-- MODAL: Koszyk -->
+<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
+      <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
+      <div id="cartContent" class="space-y-4"></div>
+      <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
+    </div>
+  </div>
+  
 </body>
 </html>
