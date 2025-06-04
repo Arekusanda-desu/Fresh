@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funkcje | FreshSynk AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">FreshSynk AI</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-gray-300">Strona główna</a></li>
+      <li><a href="technologie.html" class="hover:text-gray-300">Technologie</a></li>
+      <li><a href="funkcje.html" class="hover:text-gray-300 font-semibold">Funkcje</a></li>
+      <li><a href="opinie.html" class="hover:text-gray-300">Opinie</a></li>
+      <li>
+        <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
+          🛒 Koszyk
+          <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sekcja Funkcje -->
+  <section class="max-w-4xl mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold mb-10 text-center">Kluczowe Funkcje FreshSynk AI</h1>
+
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">📅 Monitorowanie dat ważności</h2>
+        <p>Automatyczne śledzenie terminów ważności produktów z powiadomieniami na telefon i ekran lodówki.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">📋 Inteligentne przepisy</h2>
+        <p>Dopasowywanie przepisów do składników w lodówce i preferencji dietetycznych (np. keto, wegetariańskie).</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">🛍️ Lista zakupów i zakupy online</h2>
+        <p>Tworzenie listy brakujących produktów i zamówienia online przez integrację z e-commerce.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">🔊 Integracja z asystentami AI</h2>
+        <p>Kompatybilność z Alexa, Google Assistant i sterowanie głosowe dla maksymalnej wygody.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">♻️ Ekologia i oszczędność energii</h2>
+        <p>Klasa energetyczna A++, technologia No Frost, ekologiczne czynniki chłodnicze, czujniki wilgotności.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">🧠 Personalizacja AI</h2>
+        <p>Dostosowanie funkcji do diety, nawyków, zdrowia użytkownika, w tym analiza składników i nawyków zakupowych.</p>
+      </div>
+
+      <div class="text-center">
+        <button onclick="addToCart('FreshSynk AI SmartCool 8500', '3999 zł')" class="buy-btn">
+          🛒 Dodaj do koszyka
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: Koszyk -->
+  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
+      <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+      <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
+      <div id="cartContent" class="space-y-4"></div>
+      <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
+    </div>
+  </div>
+
+</body>
+</html>
