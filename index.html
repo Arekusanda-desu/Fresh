@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Freshsynk</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -13,7 +12,7 @@
 <body>
   <header class="navbar">
     <div class="nav-left">
-      <a href="index.html">Strona główna</a>
+      <a href="#">Strona główna</a>
       <a href="technologie.html">Technologie</a>
       <a href="funkcje.html">Funkcje</a>
     </div>
@@ -37,18 +36,280 @@
       <a href="galeria.html">Galeria</a>
       <a href="opinie.html">Opinie</a>
       <a href="kontakt.html">Kontakt</a>
-      <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
-        🛒 Koszyk
-        <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
-      </button>
+      <li>
+        <button onclick="toggleCartModal()" class="hover:text-gray-300 relative">
+          🛒 Koszyk
+          <span id="cart-count" class="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full hidden">0</span>
+        </button>
+      </li>
+      
     </div>
   </header>
 
-  <!-- Контент страницы (Hero, Funkcje, Specyfikacja, Opinie и т.д.) должен остаться без изменений -->
-  <!-- ... -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="left">
+        <h1>RF65DG9H0EB1 Lodówka FreshSynk AI SmartCool 8500 Technologia Triple Cooling™ Wi-Fi 1,83 m 636 l</h1>
+        <p>
+          Przyszłość chłodzenia – dziś. <br />
+          Dotykowy ekran, zarządzanie aplikacją, <br /> system oszczędzania energii i <br />
+          perfekcyjna świeżość każdego dnia.
+        </p>
+        <ul class="features">
+          <li>🌐 Wi-Fi</li>
+          <li>📱 Ekran dotykowy</li>
+          <li>❄️ System SmartCool</li>
+        </ul>
+        <p class="price">
+          <strong>Od 533,30 zł / mies. w ratach 0%,<br />
+            przez 30 miesięcy lub 15 999,00 zł</strong>
+        </p>
+        <button onclick="addToCart('FreshSynk AI SmartCool 8500', '3999 zł')" 
+  class="buy-btn">
+  🛒 Dodaj do koszyka
+</button>
 
+<script>
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`Dodano do koszyka: ${name}`);
+  }
+</script>
+
+      </div>
+      <div class="right">
+        <div class="fridge-box">
+          <img src="frige.png" alt="SmartCool fridge" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav id="navbar" class="hidden-navbar">
+    <ul>
+      <li><a href="#funkcje">Funkcje</a></li>
+      <li><a href="#specyfikacja">Specyfikacja</a></li>
+      <li><a href="#opinie">Opinie</a></li>
+      <li><a href="#pomoc">Pomoc</a></li>
+    </ul>
+  </nav>
+
+  <section id="funkcje" class="funkcje">
+        <h2>Funkcje</h2>
+        <div class="funkcje-container">
+          <div class="funkcje-image">
+            <img src="fridge.png" alt="Fridge" />
+          </div>
+      
+          <div class="funkcje-column-right">
+            <div class="funkcja">System SmartHome</div>
+            <div class="funkcja">Automatyczne generowanie listy zakupów</div>
+            <div class="funkcja">Monitirowanie dat ważności</div>
+            <div class="funkcja">Inteligentne przepisy</div>
+          </div>
+        </div>
+        <div class="zarzadzanie-zywnoscia">
+            <h2>Efektywne zarządzanie żywnością</h2>
+            <div class="text-zywnosc">
+                <p>
+1. Automatyczne monitorowanie dat waznosci
+Nasza lodówka automatycznie sledzi daty waznosci
+przechowywanych produktow, a takze powiadamia
+uzytkownika o zblizajacych sie terminach. Dzieki temu
+pomagamy minimalizowac marnowanie zywnosci.</p>
+<p>2. Inteligentne przepisy
+Na podstawie dostepnych sktadników w lodówce, nasza
+aplikacja sugeruje przepisy, które odpowiadaja
+preferenciom uzytkownika, takie jak dieta
+wegetarianska, keto czy niskokaloryczna. Użytkownicy
+moga takze sledzic wartosci odzywcze przygotowanych
+potraw. </p>
+<p>3. Integracja z systemem smart home
+Lodówka wspótpracuje z popularnymi systemami smart
+home, takimi jak Amazon Alexa czy Google Assistant,
+umozliwiajac wygodne sterowanie gtosowe oraz zdalne
+zarzadzanie urzadzeniem. </p>
+<p>4.Automatyczne generowanie listy zakupów
+Nasza lodówka automatycznie tworzy liste zakupów na
+podstawie brakujacych produktów. Dodatkowo, dzieki
+integracji z platformami e-commerce, uzytkownicy moga
+tatwo zamówié brakujace sktadniki.
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <section id="specyfikacja" class="specyfikacja">
+        <div class="top-bar">
+            <h2>Specyfikacja</h2>
+            <span class="expand-toggle" id="toggleAll">Rozwiń wszystko</span>
+          </div>
+          
+          <div class="section">Podsumowanie <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Typ chłodzenia:</b> Triple Cooling</p>
+            <p><b>Wysokość obudowy z zawiasem netto:</b>1830 mm</p>
+            <p><b>Wysokość obudowy z zawiasem netto:</b>1830 mm</p>
+            <p><b>Głębokość z uchwytem drzwi netto:</b> 723 mm</p>
+            <p><b>Waga netto:</b> 155 kg</p>
+            <p><b>Szerokość netto:</b> 912 mm</p>
+         </div>
+          
+          <div class="section">Lewa strona zamrażalnika <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Liczba półek:</b> 2</p>
+            <p><b>Liczba szuflad:</b> 1 </p>
+            <p><b>Liczba pojemników w drzwiach:</b> 3</p> 
+            <p><b>Kostkarka:</b> Dual Auto Ice Maker</p>
+            <p><b>Oświetlenie wewnętrzne LED:</b> Tak</p>
+          </div>
+          
+          <div class="section">Prawa strona zamrażalnika <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Liczba szuflad:</b> 1</p>
+            <p><b>FlexZone:</b> Tak</p>
+            <p><b>Liczba półek:</b> 2</p> 
+            <p><b>Liczba pojemników w drzwiach:</b> 3</p> 
+          </div>
+          
+          <div class="section">Wydajność <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Zamrażarka brutto:</b> 250 ℓ</p>
+            <p><b>Chłodziarka brutto:</b> 386 ℓ</p>
+            <p><b>Pojemność brutto:</b> 636 ℓ</p>
+          </div>
+          
+          <div class="section">Funkcja chłodzenia <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Typ chłodzenia:</b> Triple Cooling</p>
+          </div>
+          
+          <div class="section">Cechy zewnętrzne <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Beverage Center:</b> Tak</p>
+            <p><b> Kolor:</b> Grafitowa stal</p>
+            <p><b>Dozownik z filtrem wody:</b> Tak</p>
+            <p><b>Wyświetlacz:</b> Family Hub</p>
+            <p><b>Otwieranie drzwi:</b> Podchwyt</p>
+            <p><b>Typ dozownika:</b> Dyspenser wody (z podłączeniem do wody)+ Auto Fill</p>
+          </div>
+          
+          <div class="section">Funkcje ogólne <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Alarm otwartych drzwi:</b> Tak</p>
+            <p><b>Metal Cooling:</b> Tak</p>
+          </div>
+         
+          <div class="section">Wydajność <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Klasa klimatyczna:</b> SN, N, ST, T</p>
+            <p><b>Zdolność zamrażania:</b>  12 kg/24 godz.</p>
+            <p><b>Roczne zużycie energii:</b> 365 kWh/rok</p>
+            <p><b>Klasa efektywności energetycznej:</b> E</p>
+            <p><b>Poziom hałasu (dB):</b> 37 dBA</p>
+          </div>
+
+          <div class="section">Parametry fizyczne <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Wysokość obudowy z zawiasem netto:</b> 1830 mm</p>
+            <p><b>Wysokość obudowy bez zawiasu netto:</b> 1797 mm</p>
+            <p><b>Głębokość z uchwytem drzwi netto:</b> 723 mm</p>
+            <p><b>Głębokość bez uchwytu drzwi netto:</b> 723 mm</p>
+            <p><b>Głębokość bez drzwi netto:</b> 610 mm</p>
+            <p><b>Waga netto:</b> 155 kg</p>
+            <p><b>Szerokość netto:</b> 912 mm</p>
+            <p><b>Wymiary opakowania (SxWxG):</b> 972 x1970x776 mm</p>
+            <p><b>Waga z opakowaniem:</b> 164 kg</p>
+          </div>
+
+          <div class="section">Funkcje chłodziarki <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Oświetlenie wewnętrzne LED:</b> Górne LED</p>
+            <p><b>Liczba pojemników w drzwiach:</b>  6</p>
+            <p><b>Liczba półek:</b> 4</p>
+            <p><b>Liczba szuflad:</b> 2</p>
+            <p><b>Pochłaniacz zapachów:</b> Filtr dezodoryzujący</p>
+            <p><b>Liczba półek na duże butelki w drzwiach:</b> 1</p>
+          </div>
+
+          <div class="section">Łączność z aplikacjami <span class="arrow">▼</span></div>
+          <div class="section-content">
+            <p><b>Kompatybilność z aplikacją SmartThings:</b> Tak</p>
+          </div>
+      </section>
+
+    <section id="opinie" class="opinie">
+        <h2>Opinie</h2>
+      
+        <div class="opinie-top">
+          <div class="opinie-left">
+            <div class="rating-summary">
+              <div class="rating-number">4.8</div>
+              <div class="stars">★★★★★</div>
+              <div class="reviews-count"><a href="opinie.html">64 opinii</a></div>
+              <p>51 z 56 (91%) opiniodawców poleciło ten produkt</p>
+            </div>
+      
+            <div class="rating-bars">
+              <div class="bar"><span>5 gwiazdek</span><div class="bar-fill" style="width: 85%"></div><span>55</span></div>
+              <div class="bar"><span>4 gwiazdki</span><div class="bar-fill" style="width: 10%"></div><span>5</span></div>
+              <div class="bar"><span>3 gwiazdki</span><div class="bar-fill" style="width: 5%"></div><span>3</span></div>
+              <div class="bar"><span>2 gwiazdki</span><div class="bar-fill" style="width: 0%"></div><span>0</span></div>
+              <div class="bar"><span>1 gwiazdka</span><div class="bar-fill" style="width: 2%"></div><span>1</span></div>
+            </div>
+          </div>
+
+            <div class="opinie-right">
+                <h4>Oceń ten produkt</h4>
+                <div class="star-select" id="star-select">
+                  <span data-value="1">☆</span>
+                  <span data-value="2">☆</span>
+                  <span data-value="3">☆</span>
+                  <span data-value="4">☆</span>
+                  <span data-value="5">☆</span>
+                </div>
+                <input type="email" id="email-input" placeholder="Twój email" />
+                <button id="submit-rating">Wyślij ocenę</button>
+                <p id="rating-message" style="color: green; display: none;">Dziękujemy za opinię!</p>
+              </div>
+              
+      
+        <div class="opinie-bottom">
+          <h4>Średnia ocena klientów</h4>
+          <div class="category-ratings">
+            <div class="category">
+              <span>Funkcje</span>
+              <div class="bar-fill" style="width: 96%"></div>
+              <span class="score">4.8</span>
+            </div>
+            <div class="category">
+              <span>Wydajność</span>
+              <div class="bar-fill" style="width: 96%"></div>
+              <span class="score">4.8</span>
+            </div>
+            <div class="category">
+              <span>Konstrukcja</span>
+              <div class="bar-fill" style="width: 98%"></div>
+              <span class="score">4.9</span>
+            </div>
+            <div class="category">
+              <span>Wartość</span>
+              <div class="bar-fill" style="width: 90%"></div>
+              <span class="score">4.5</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  <section id="pomoc">
+    <!-- Pomoc sekcja -->
+  </section>
+
+  <script src="main.js" defer></script>
   <!-- MODAL: Koszyk -->
-  <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
       <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
       <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
@@ -56,6 +317,6 @@
       <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
     </div>
   </div>
-
+  
 </body>
 </html>
