@@ -469,3 +469,77 @@ body {
   #cartModal.hidden {
     display: none;
   }
+
+
+/* kontakty po detski */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #222;
+  }
+  
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 0 20px;
+  }
+  
+  .name {
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .icon {
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+    transition: transform 0.2s;
+  }
+  
+  .icon:hover {
+    transform: scale(1.15);
+  }
+  
+  .instagram {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png');
+  }
+  
+  .facebook {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733547.png');
+  }
+  
+  .whatsapp {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733585.png');
+  }
+  
+  .developer {
+    margin-top: 50px;
+  }
+  
+  .developer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
