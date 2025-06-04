@@ -543,3 +543,71 @@ body {
     margin-bottom: 10px;
   }
   
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    padding: 15px 30px;
+    position: relative;
+    font-size: 13px;
+  }
+  
+  .footer-left,
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-left a,
+  .footer-right a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .footer-left .divider {
+    margin: 0 5px;
+    color: #888;
+  }
+  
+  .footer-center {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+  }
+  
+  .icon.fb {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733547.png');
+  }
+  .icon.x {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3670/3670151.png');
+  }
+  .icon.ig {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png');
+  }
+
+  
+  .cookie-btn {
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+    font-size: 12px;
+    background: #e7f6f9;
+    padding: 3px 8px;
+    border-radius: 15px;
+  }
+  
+  .cookie-btn a {
+    text-decoration: none;
+    color: #007fa3;
+  }
+  
