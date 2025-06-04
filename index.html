@@ -309,13 +309,16 @@ tatwo zamówié brakujace sktadniki.
 
   <script src="main.js" defer></script>
   <!-- MODAL: Koszyk -->
-<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white w-full max-w-md rounded-xl p-6 relative">
-      <button onclick="toggleCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-      <h2 class="text-2xl font-bold mb-4">Twój koszyk</h2>
-      <div id="cartContent" class="space-y-4"></div>
-      <button onclick="clearCart()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Wyczyść koszyk</button>
-    </div>
+<div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
+      <h2 class="text-xl font-semibold mb-4">Twój koszyk</h2>
+      <div id="cartContent" class="space-y-4">
+        <!-- Elementy koszyka będą ładowane dynamicznie tutaj -->
+      </div>
+      <div class="flex justify-between mt-6">
+        <button onclick="clearCart()" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">Wyczyść</button>
+        <button onclick="toggleCartModal()" class="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded">Zamknij</button>
+      </div>
   </div>
   
 </body>
